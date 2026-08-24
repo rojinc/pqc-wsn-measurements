@@ -1,0 +1,21 @@
+# Run the Xtensa cores at full 240 MHz (matches the paper).
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+
+# Console UART at 115200 (matches capture_serial.py default).
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+
+# Don't let the task watchdog reset us during long signing loops. Critical for
+# SLH-DSA-128s, where a SINGLE signature takes ~1-2 s (well past the 5 s default
+# once a few run back to back) and keygen builds the full top Merkle tree.
+CONFIG_ESP_TASK_WDT_INIT=n
+CONFIG_ESP_INT_WDT=n
+
+# Optimise for size (Pico SDK default was -Os; keep platforms comparable).
+CONFIG_COMPILER_OPTIMIZATION_SIZE=y
+
+# Stack-overflow detection: canary method aborts on a real overflow instead of
+# silently saturating (the failure that produced the wrong arXiv-v1 numbers).
+CONFIG_FREERTOS_CHECK_STACKOVERFLOW_CANARY=y
+
+# app_main only orchestrates + prints; give it a little headroom.
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192

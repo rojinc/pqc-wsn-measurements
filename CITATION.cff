@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use these benchmarks or measurement data, please cite using the metadata below."
+title: "PQC Benchmarks on WSN-Class Hardware (RP2040 + ESP32)"
+abstract: >-
+  On-device measurement campaign for NIST post-quantum signature standards
+  (FN-DSA-512, ML-DSA-44, SLH-DSA-128s), ML-KEM-512, and an ECDSA-P256 baseline
+  on ARM Cortex-M0+ (RP2040) and Xtensa LX6 (ESP32): firmware, capture and
+  analysis scripts, raw serial captures, and generated latency, memory, and
+  energy tables.
+type: software
+authors:
+  - given-names: Rojin
+    family-names: Chhetri
+    orcid: "https://orcid.org/0009-0005-2757-3436"
+    affiliation: "Softora Innovation Pvt. Ltd."
+repository-code: "https://github.com/rojinc/pqc-wsn-measurements"
+url: "https://github.com/rojinc/pqc-wsn-measurements"
+license: MIT
+keywords:
+  - post-quantum cryptography
+  - FN-DSA
+  - FALCON
+  - ML-DSA
+  - ML-KEM
+  - SLH-DSA
+  - wireless sensor networks
+  - RP2040
+  - ESP32
+  - reproducible benchmarking
+references:
+  - type: article
+    title: >-
+      Post-Quantum Cryptography for WSN-Blockchain Systems: A System-Level
+      Evaluation and Migration Strategy
+    authors:
+      - given-names: Babu
+        family-names: Pillai
+      - given-names: Aravinda S.
+        family-names: Rao
+      - given-names: Narayana
+        family-names: Madineni
+      - given-names: Rojin
+        family-names: Chhetri
+        orcid: "https://orcid.org/0009-0005-2757-3436"
+      - given-names: Elizabeth
+        family-names: Chang
+    year: 2026
+    notes: "Under submission."

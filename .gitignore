@@ -1,0 +1,41 @@
+# ---- build output -------------------------------------------------------
+# 130 MB of the 141 MB working tree. Fully regenerable from source.
+pico/build/
+esp32/build/
+esp32/managed_components/
+build/
+*.elf
+*.elf.map
+*.uf2
+*.bin
+*.dis
+*.o
+*.a
+
+# ---- ESP-IDF local state ------------------------------------------------
+# sdkconfig IS tracked: it carries the mbedTLS options that the cross-platform
+# ECDSA comparison depends on (see docs/FINDINGS_build_asymmetry.md).
+# These two are machine-local and must not be.
+sdkconfig.old
+dependencies.lock
+
+# ---- Python -------------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---- macOS / editors ----------------------------------------------------
+.DS_Store
+._*
+.vscode/
+.idea/
+*.swp
+
+# ---- deliberately NOT ignored -------------------------------------------
+# vendor/pqclean/   pinned at commit 3730b32a, clean variants only. Vendored
+#                   rather than submoduled so a clone reproduces the exact
+#                   crypto sources the measurements were taken from.
+# results/          capture CSVs and logs — the irreplaceable part; some
+#                   captures cost 20+ hours of board time. Version control is
+#                   the entire point.
